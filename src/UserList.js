@@ -1,9 +1,13 @@
 import React from 'react';
 import './UserList.css';
 
-const UserList = () => {
+const UserList = (props) => {
+    const users = props.users;
+    const userElements = users.map(user => <li key={user.id}>{user.name}<span>X</span></li>);
+
     return (
         <ul className="list">
+            {userElements}
         </ul>
     );
 }
