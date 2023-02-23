@@ -20,6 +20,7 @@
 .list li span {
     position: absolute;
     right: 1em;
+    cursor: pointer;
 }
 
 .list li span:hover {

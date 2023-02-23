@@ -24,6 +24,14 @@ class Users extends Component {
         this._input.value = '';
     }
 
+    removeUser = (userId) => {
+        this.setState(() => {
+            return({
+                userList: this.state.userList.filter(user => user.id !== userId),
+            });
+        });
+    }
+
     render() {
         return (
             <div className="container">
@@ -32,7 +40,7 @@ class Users extends Component {
                     <input type="text" placeholder="Enter name" ref={(elem) => {this._input = elem;}}/>
                     <button type="submit">Add user</button>
                 </form>
-                <UserList users={this.state.userList}/>
+                <UserList users={this.state.userList} remove={this.removeUser}/>
             </div>
         );
     }

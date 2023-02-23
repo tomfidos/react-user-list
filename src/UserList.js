@@ -3,7 +3,7 @@ import './UserList.css';
 
 const UserList = (props) => {
     const users = props.users;
-    const userElements = users.map(user => <li key={user.id}>{user.name}<span>X</span></li>);
+    const userElements = users.map(user => <li key={user.id}>{user.name}<span onClick={() => {props.remove(user.id);}}>X</span></li>);
 
     return (
         <ul className="list">
